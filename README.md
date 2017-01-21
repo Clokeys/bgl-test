@@ -23,7 +23,7 @@
 | CheckDataBoundary | Verify minimum and maximum number of characters that user can enter for each field |
 | CheckSpecialCharacters | Verify user can enter special characters, such as European characters and hyphen.This test also verify that user can enter double  barrel names. (European language not supported?)|
 | VerifyHappyPath | Ensure page will move to next page after entering all mandatory fields |
-| VerifySessionEnd | Verify that session will end after certeain period of time|
+| VerifySessionEnd | Verify that session will end after certeain period of time.   *Webdriver Wait needs to be set up with correct expected session expire time* |
 
 
 ## 4. Directory

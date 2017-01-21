@@ -1,13 +1,9 @@
 package Lib;
 
-import Config.ConfigData;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxBinary;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.io.File;
@@ -25,22 +21,22 @@ public class UtilMethods {
      ==========================================================================================
      **/
     public WebDriver InitializeWebDriver(String strBrowserType){
-        //switch statement doesn't work for below demands...
-        if (strBrowserType.toLowerCase().equals("firefox")) {
-            File pathToBinary = new File(ConfigData.strFirefoxDriver);
-            FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
-            FirefoxProfile firefoxProfile = new FirefoxProfile();
-            WebDriver driver = new FirefoxDriver(ffBinary,firefoxProfile);
-            return driver;
 
-        }else if (strBrowserType.toLowerCase().equals("ie")) {
-            File file = new File(ConfigData.strIEDriver);
+        //Capture location of drivers
+        String driverPath = System.getProperty("user.dir");
+        Integer pos = driverPath.lastIndexOf("\\");
+        driverPath = driverPath.substring(0,pos);
+
+        if (strBrowserType.toLowerCase().equals("ie")) {
+            driverPath = driverPath + "\\IEDriverServer.exe";
+            File file = new File(driverPath);
             System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
             WebDriver driver = new InternetExplorerDriver();
             return driver;
 
         }else{
-            System.setProperty("webdriver.chrome.driver", ConfigData.strChromeDriver);
+            driverPath = driverPath + "\\chromedriver.exe";
+            System.setProperty("webdriver.chrome.driver", driverPath);
             WebDriver driver = new ChromeDriver();
             return driver;
         }

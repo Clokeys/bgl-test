@@ -126,6 +126,9 @@ public class LoginPageObjects {
     @FindBy(xpath = "//*[@id='Welcome']/div[2]/div[2]/p[4]/a")
     public WebElement lnkFCA;
 
+    @FindBy(xpath = "//*[@id='Welcome']/div[2]/div[2]/p[4]")
+    public WebElement txtFCA;
+
     @FindBy(xpath = "//*[@id='Welcome']/div[2]/div[2]/p[5]/strong/u")
     public WebElement lnkDataProtection;
 
@@ -175,6 +178,39 @@ public class LoginPageObjects {
     @FindBy(css = ".validationText.autoValidationRiskAddress_pcode")
     public WebElement txtPostcodeErr;  //Postcode is required
 
+    @FindBy(css = ".fontSizeSmall.active>a")
+    public WebElement fontsizeS;
+
+    @FindBy(css = ".fontSizeMedium>a")
+    public WebElement fontsizeM;
+
+    @FindBy(css = ".fontSizeLarge>a")
+    public WebElement fontsizeL;
+
+    @FindBy(css = ".asideBody>p")
+    public WebElement txtBeforeBegin;
+
+    @FindBy(css = ".ask")
+    public WebElement txtAsk;
+
+    @FindBy(css = ".nw_UserInputField")
+    public WebElement boxAsk;
+
+    @FindBy(css = ".nw_UserSubmit.nw_Disabled")
+    public WebElement btnAsk;
+
+    @FindBy(xpath = "//*[@id='jqShoppingBasketContainer']/div[2]/div[1]/div/p")
+    public WebElement txtFurtherInfo;
+
+    @FindBy(xpath = "//*[@id='jqShoppingBasketContainer']/div[2]/div[2]/div/p")
+    public WebElement txtInfoRequired;
+
+    @FindBy(css = ".securePopUp.popupLink.autoSecureSite>p")
+    public WebElement txtSecureSite;
+
+    @FindBy(css = ".securityImage")
+    public WebElement imgSecureSite;
+
 
 
     //Put all Page Objects into table so they can be verified in loop
@@ -218,7 +254,43 @@ public class LoginPageObjects {
         elemList.put("lnkPrivatePolicy", lnkPrivatePolicy);
         elemList.put("lnkBackToTop", lnkBackToTop);
         elemList.put("ContinueButton", btnContinue);
+        elemList.put("fontSmall", fontsizeS);
+        elemList.put("fontsizeM",fontsizeM );
+        elemList.put("fontsizeL", fontsizeL);
+        elemList.put("txtBeforeBegin", txtBeforeBegin);
+        elemList.put("txtAsk", txtAsk);
+        elemList.put("boxAsk", boxAsk);
+        elemList.put("btnAsk", btnAsk);
+        elemList.put("txtFurtherInfo", txtFurtherInfo);
+        elemList.put("txtInfoRequired", txtInfoRequired);
+        elemList.put("txtSecureSite", txtSecureSite);
+        elemList.put("imgSecureSite", imgSecureSite);
         return elemList;
     }
+
+    // Login Page Texts
+    public String ErrMissingTitle = "Please select an option";
+    public String ErrMissingFirstname = "Please enter your first name in letters only between 2 and 15 characters in length";
+    public String ErrMissingSurname = "Please enter your surname in letters only between 2 and 20 characters in length";
+    public String ErrMissingDOB = "Please enter a valid date of birth";
+    public String ErrMissingHouseNo = "Please enter your house number or name. House names should be between 2 and 40 characters in length";
+    public String ErrMissingPostcode = "Postcode is required";
+
+    public String txtCheckWelcome = "Welcome to your Car Insurance Quote";
+    public String txtCheckSearchThirty = "We'll search over 30 different schemes from leading car insurers to find the best policy for you";
+    public String txtCheckTandC = "By clicking 'Continue', you are confirming that you have read and agree to our Terms & Conditions";
+    public String txtCheckBGL = "Budget is a trading name of BISL Limited. Registered Head Office: Pegasus House. Bakewell Road, Orton Southgate, Peterborough, PE2 6YS.";
+    public String txtCheckDataProtection = "By supplying data to us you will provide information about yourself and others which the Data Protection " +
+            "Act defines as personal data or sensitive personal data. The data controller will be BISL Limited. Data, including your telephone" +
+            " number, will be used by BISL Limited and other carefully selected companies for administration, renewals, claims checking, " +
+            "a credit search, marketing and research purposes and will be added to certain databases which may be checked by various " +
+            "organisations including the police.";
+    public String txtCheckBeforeBegin = "It is important that the information you provide throughout the quote and duration of the policy is accurate. " +
+            "Failure to disclose correct and complete information to the best of your knowledge and belief may result in increased premiums, " +
+            "refusal of a claim or not being fully paid, your policy being cancelled or being made null & void and treated as if it never existed.";
+    public String txtCheckFCA = "We are an independent intermediary dealing with selected insurers and authorised and regulated by the Financial Conduct Authority.";
+
+
+
 
 }

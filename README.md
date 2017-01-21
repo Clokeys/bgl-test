@@ -48,3 +48,12 @@
 -Collection of dependencies.
 
 ![alt text](https://cloud.githubusercontent.com/assets/25242489/22154969/969c257e-df25-11e6-83fd-f799d7944147.png)
+
+
+## 5.  Test Execution and Results
+
+Test can be executed from Intellij as below.  Results can be viewed and exported as well.
+
+![testexecution](https://cloud.githubusercontent.com/assets/25242489/22175003/4b2e841e-dfe4-11e6-8579-5dd42c0adcb5.png)
+
+
